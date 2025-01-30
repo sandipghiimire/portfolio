@@ -1,7 +1,8 @@
 "use client";
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import type { NextPage } from 'next';
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { motion } from 'framer-motion'; // Import Framer Motion
 import Navbar from '@/components/Navbar';
 
@@ -11,7 +12,6 @@ const Home: NextPage = () => {
         document.title = "Sandip Ghimire - Home";
       }, []);
 
-    const [isOpen, setIsOpen] = useState(false);
 
     // Animation variants for Framer Motion
     const fadeInUp = {
@@ -37,7 +37,7 @@ const Home: NextPage = () => {
                     initial="hidden"
                     animate="visible"
                 >
-                    <img
+                    <Image
                         src="/sandip.jpg" // Replace with your photo path
                         alt="Profile Photo"
                         className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-white shadow-lg"
