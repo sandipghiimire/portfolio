@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar"; // Import Left Sidebar
 import { FaGithub, FaLink } from "react-icons/fa"; // Import icons for GitHub and URL
@@ -66,7 +67,7 @@ export default function ProjectsPage() {
         >
           <h1 className="text-4xl font-bold mb-4 text-blue-400">My Projects</h1>
           <p className="text-lg text-gray-300 leading-relaxed">
-          &apos; Here are some of the projects I've worked on. You can explore the code and see the live demo!&apos;
+          "Here are some of the projects I've worked on. You can explore the code and see the live demo!"
           </p>
         </motion.div>
 
@@ -82,7 +83,7 @@ export default function ProjectsPage() {
             >
               {/* Project Image */}
               <div className="mb-4">
-                <img
+                <Image
                   src={project.imageUrl}
                   alt={project.title}
                   className="w-full h-48 object-cover rounded-lg" // Fixed image height

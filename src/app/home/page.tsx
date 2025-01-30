@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import type { NextPage } from 'next';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { motion } from 'framer-motion'; // Import Framer Motion
@@ -51,10 +51,9 @@ const Home: NextPage = () => {
                     initial="hidden"
                     animate="visible"
                 >
-                    <h1 className="text-4xl font-bold">Hi, I&apos;m Sandip Ghimire</h1>
+                    <h1 className="text-4xl font-bold">"Hi, I'm Sandip Ghimire"</h1>
                     <p className="mt-4 text-gray-200">
-                        I&apos;m a passionate MERN stack developer specializing in Next.js, React, and Tailwind CSS.
-                        I love building dynamic web applications and creating seamless user experiences.
+                       " I m a passionate MERN stack developer specializing in Next.js, React, and Tailwind CSS. I love building dynamic web applications and creating seamless user experiences."
                     </p>
 
                     {/* Follow Me Section */}
