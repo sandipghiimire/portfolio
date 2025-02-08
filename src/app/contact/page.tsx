@@ -27,7 +27,7 @@ export default function ContactPage() {
         >
           <h1 className="text-4xl font-bold mb-4 text-blue-400">Contact Me</h1>
           <p className="text-lg text-gray-300 leading-relaxed">
-            Feel free to reach out to me through any of the following channels. I would love to connect!
+            "Feel free to reach out to me through any of the following channels. I would love to connect!"
           </p>
         </motion.div>
 
@@ -65,8 +65,8 @@ export default function ContactPage() {
             className="bg-gray-800 text-gray-300 px-6 py-4 rounded-lg shadow-lg flex flex-col items-center"
           >
             <FaMapMarkerAlt size={40} className="text-blue-400 mb-4" />
-            <h3 className="text-xl font-semibold text-blue-400">Location</h3>
-            <p className="text-lg">Kathmandu, Nepal</p>
+            <h3 className="text-xl font-semibold text-blue-400">"Location"</h3>
+            <p className="text-lg">"Kathmandu, Nepal"</p>
           </motion.div>
         </div>
 
@@ -77,7 +77,7 @@ export default function ContactPage() {
           transition={{ duration: 1 }}
           className="mt-16 w-full max-w-lg"
         >
-          <h2 className="text-2xl font-semibold text-blue-400 mb-6 text-center">Send a Message</h2>
+          <h2 className="text-2xl font-semibold text-blue-400 mb-6 text-center">"Send a Message"</h2>
           <form
             action="mailto:sandipghimire.np@gmail.com"
             method="POST"

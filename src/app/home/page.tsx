@@ -1,5 +1,5 @@
 "use client";
-import Image from 'next/image';
+// import Image from 'next/image';
 import { useEffect } from 'react';
 import type { NextPage } from 'next';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
@@ -37,7 +37,7 @@ const Home: NextPage = () => {
                     initial="hidden"
                     animate="visible"
                 >
-                    <Image
+                    <img
                         src="/sandip.jpg" // Replace with your photo path
                         alt="Profile Photo"
                         className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-white shadow-lg"

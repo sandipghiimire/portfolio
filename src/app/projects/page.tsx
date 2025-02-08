@@ -1,6 +1,5 @@
 "use client";
 
-import Image from 'next/image';
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar"; // Import Left Sidebar
 import { FaGithub, FaLink } from "react-icons/fa"; // Import icons for GitHub and URL
@@ -83,7 +82,7 @@ export default function ProjectsPage() {
             >
               {/* Project Image */}
               <div className="mb-4">
-                <Image
+                <img
                   src={project.imageUrl}
                   alt={project.title}
                   className="w-full h-48 object-cover rounded-lg" // Fixed image height
