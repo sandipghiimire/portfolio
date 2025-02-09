@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "wrangler dev",  
+    "deploy": "wrangler publish",  
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
