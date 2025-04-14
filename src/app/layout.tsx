@@ -4,9 +4,9 @@ import "./globals.css";
 
 
 export const metadat = {
-  title: "Sandip Ghimire",
-  description: "Created by Sandip Ghimire",
+  title: "Portfolio",
 };
+
 
 export default function RootLayout({
   children,
