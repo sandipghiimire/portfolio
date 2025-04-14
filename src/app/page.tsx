@@ -133,7 +133,7 @@ const SinglePagePortfolio = () => {
     };
 
     const getPortfolioItems = () => {
-        const items = {
+        const items:string = {
             design: portfolioItems.graphicDesign,
             web: portfolioItems.webProjects,
             photo: portfolioItems.photography

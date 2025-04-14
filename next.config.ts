@@ -6,4 +6,6 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = {
+  reactStrictMode: true, // Strict mode might help catch issues
+};
