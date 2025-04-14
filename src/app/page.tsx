@@ -134,7 +134,7 @@ const SinglePagePortfolio = () => {
     };
 
     const getPortfolioItems = () => {
-        const items: = {
+        const items:any = {
             design: portfolioItems.graphicDesign,
             web: portfolioItems.webProjects,
             photo: portfolioItems.photography
