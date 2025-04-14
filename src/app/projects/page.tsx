@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar"; // Import Left Sidebar
-import { FaGithub, FaLink } from "react-icons/fa"; // Import icons for GitHub and URL
+import Navbar from "@/components/Navbar";
+import { FaGithub, FaLink } from "react-icons/fa";
+import Image from "next/image";
 import { useEffect } from "react";
 
 interface Project {
@@ -45,72 +46,93 @@ const projectsData: Project[] = [
 ];
 
 export default function ProjectsPage() {
-
   useEffect(() => {
     document.title = "Sandip Ghimire - Projects";
   }, []);
 
   return (
-    <div className="flex bg-black min-h-screen pl-20">
-      {/* Left Sidebar */}
+    <div className="flex min-h-screen bg-gradient-to-br from-black via-gray-900 to-black pl-4 md:pl-20">
       <Navbar />
 
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col items-center justify-center text-white px-6">
-        {/* Projects Section */}
+      <div className="flex-1 flex flex-col items-center text-white px-6 py-12 overflow-hidden">
+        {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-3xl text-center"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16 max-w-4xl"
         >
-          <h1 className="text-4xl font-bold mb-4 text-blue-400">My Projects</h1>
-          <p className="text-lg text-gray-300 leading-relaxed">
-          "Here are some of the projects I've worked on. You can explore the code and see the live demo!"
+          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-4">
+            Project Portfolio
+          </h1>
+          <p className="text-lg md:text-xl text-gray-300">
+            Explore my technical solutions through these featured projects
           </p>
         </motion.div>
 
-        {/* Project Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10">
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl">
           {projectsData.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1 }}
-              className="bg-gray-800 text-gray-300 px-6 py-4 rounded-lg shadow-lg w-80 h-96 transform transition-transform duration-300 hover:scale-105" // Added hover:scale-105
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ scale: 1.02 }}
+              className="group relative h-[400px] rounded-2xl overflow-hidden"
             >
-              {/* Project Image */}
-              <div className="mb-4">
-                <img
+              {/* Image Container */}
+              <div className="absolute inset-0 overflow-hidden">
+                <Image
                   src={project.imageUrl}
                   alt={project.title}
-                  className="w-full h-48 object-cover rounded-lg" // Fixed image height
+                  fill
+                  className="object-cover transition-all duration-500 group-hover:scale-105"
                 />
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
               </div>
 
-              {/* Project Title and Description */}
-              <h3 className="text-xl font-semibold text-blue-400">{project.title}</h3>
-              <p className="mb-4">{project.description}</p>
+              {/* Content Container */}
+              <div className="relative h-full flex flex-col justify-end p-6">
+                {/* Title & Description */}
+                <motion.div
+                  initial={{ y: 20 }}
+                  animate={{ y: 0 }}
+                  className="mb-4"
+                >
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-300 line-clamp-3">
+                    {project.description}
+                  </p>
+                </motion.div>
 
-              {/* Icons for GitHub and URL */}
-              <div className="flex justify-center gap-6">
-                <a
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-400 hover:text-blue-600"
-                >
-                  <FaGithub size={24} />
-                </a>
-                <a
-                  href={project.projectUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-400 hover:text-blue-600"
-                >
-                  <FaLink size={24} />
-                </a>
+                {/* Links Container */}
+                <div className="flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 bg-blue-400/20 text-blue-400 rounded-lg hover:bg-blue-400/30 transition-colors"
+                  >
+                    <FaGithub className="text-lg" />
+                    <span>Code</span>
+                  </a>
+                  <a
+                    href={project.projectUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 bg-cyan-400/20 text-cyan-400 rounded-lg hover:bg-cyan-400/30 transition-colors"
+                  >
+                    <FaLink className="text-lg" />
+                    <span>Demo</span>
+                  </a>
+                </div>
+
+                {/* Hover Glow Effect */}
+                <div className="absolute inset-0 border border-blue-400/30 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </motion.div>
           ))}
