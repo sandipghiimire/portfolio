@@ -17,6 +17,14 @@ const SinglePagePortfolio = () => {
         message: ""
     });
 
+    type PortfolioItem = {
+        id: number;
+        image: string;
+        title: string;
+        category: string;
+        driveLink?: string;
+      };
+
     const sections = [
         { id: 'home', name: 'Home' },
         { id: 'about', name: 'About' },
@@ -132,8 +140,8 @@ const SinglePagePortfolio = () => {
         ]
     };
 
-    const getPortfolioItems = () => {
-        const items:string = {
+    const getPortfolioItems = (): PortfolioItem[] => {
+        const items: PortfolioItem[] = {
             design: portfolioItems.graphicDesign,
             web: portfolioItems.webProjects,
             photo: portfolioItems.photography
