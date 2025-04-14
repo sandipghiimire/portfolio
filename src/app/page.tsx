@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaBriefcase, FaGraduationCap, FaPhoneAlt, FaPhone, FaCalendar, FaExternalLinkAlt, FaCheck, FaLink, FaComment, FaUser, FaPalette, FaCode, FaCamera, FaPlus } from 'react-icons/fa';
 
 const SinglePagePortfolio = () => {
-    const DRIVE_LINK = "https://drive.google.com/your-portfolio-folder-link";
     const [activeSection, setActiveSection] = useState('home');
     const [activeTab, setActiveTab] = useState('design');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -274,7 +273,7 @@ const SinglePagePortfolio = () => {
                     </div>
 
                     <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-16 relative z-10">
-                        {/* Image Container */}
+                        {/* image Container */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
@@ -282,7 +281,7 @@ const SinglePagePortfolio = () => {
                             className="order-2 md:order-1 w-full md:w-1/2 flex justify-center"
                         >
                             <div className="relative rounded-full overflow-hidden border-4 border-blue-400/30 hover:border-blue-400/50 transition-all duration-300 group w-[400px] h-[400px]">
-                                <motion.img
+                                <motion.image 
                                     src="/sandip.jpg"
                                     alt="Sandip Ghimire"
                                     className="w-full h-full object-cover rounded-full"
@@ -548,9 +547,9 @@ const SinglePagePortfolio = () => {
                                         transition={{ delay: i * 0.1 }}
                                         className="group relative overflow-hidden rounded-2xl border border-gray-800 hover:border-blue-400/30 bg-gray-900/50 backdrop-blur-sm transition-all duration-300"
                                     >
-                                        {/* Project Image */}
+                                        {/* Project image */}
                                         <div className="relative h-48 overflow-hidden">
-                                            <img
+                                            <image 
                                                 src={project.image}
                                                 alt={project.title}
                                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -676,7 +675,7 @@ const SinglePagePortfolio = () => {
                                     className="group relative overflow-hidden rounded-xl border border-gray-800 hover:border-blue-400/30 transition-all"
                                 >
                                     <div className="relative aspect-square">
-                                        <img
+                                        <image 
                                             src={item.image}
                                             alt={item.title}
                                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
@@ -815,7 +814,7 @@ const SinglePagePortfolio = () => {
                                 Get in Touch
                             </h2>
                             <p className="text-gray-400 text-lg max-w-xl mx-auto">
-                                Let's collaborate! Whether you have a project in mind or just want to connect.
+                                Let&apos;s collaborate! Whether you have a project in mind or just want to connect.
                             </p>
                         </div>
 
