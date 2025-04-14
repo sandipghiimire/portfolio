@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaBriefcase, FaGraduationCap, FaPhoneAlt, FaPhone, FaCalendar, FaExternalLinkAlt, FaCheck, FaLink, FaComment, FaUser, FaPaperPlane, FaPalette, FaCode, FaCamera, FaPlus } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaBriefcase, FaGraduationCap, FaPhoneAlt, FaPhone, FaCalendar, FaExternalLinkAlt, FaCheck, FaLink, FaComment, FaUser, FaPalette, FaCode, FaCamera, FaPlus } from 'react-icons/fa';
 
 const SinglePagePortfolio = () => {
     const DRIVE_LINK = "https://drive.google.com/your-portfolio-folder-link";
@@ -134,7 +134,7 @@ const SinglePagePortfolio = () => {
     };
 
     const getPortfolioItems = () => {
-        const items:any = {
+        const items: = {
             design: portfolioItems.graphicDesign,
             web: portfolioItems.webProjects,
             photo: portfolioItems.photography
@@ -152,10 +152,6 @@ const SinglePagePortfolio = () => {
         web: portfolioItems.webProjects.length,
         photo: portfolioItems.photography.length
     }[activeTab];
-
-    const handleDriveRedirect = () => {
-        window.open(DRIVE_LINK, '_blank');
-      };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -674,7 +670,6 @@ const SinglePagePortfolio = () => {
                                 <motion.div
                                     key={item.id}
                                     ref={item.driveLink}
-                                    target="_bank"
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ duration: 0.3 }}
