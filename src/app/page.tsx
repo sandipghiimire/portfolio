@@ -133,7 +133,7 @@ const SinglePagePortfolio = () => {
     };
 
     const getPortfolioItems = () => {
-        const items:any = {
+        const items = {
             design: portfolioItems.graphicDesign,
             web: portfolioItems.webProjects,
             photo: portfolioItems.photography
@@ -665,10 +665,9 @@ const SinglePagePortfolio = () => {
 
                         {/* Portfolio Grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                            {getPortfolioItems().map((item:any) => (
+                            {getPortfolioItems().map((item) => (
                                 <motion.div
                                     key={item.id}
-                                    ref={item.driveLink}
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ duration: 0.3 }}
