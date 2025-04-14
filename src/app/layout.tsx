@@ -1,28 +1,20 @@
-"use client";
+// src/app/layout.tsx
 
-import "./globals.css";
+import React from 'react';
 
-
-export const metadat = {
-  title: "Portfolio",
-};
-
-
-export default function RootLayout({
-  children,
-}: Readonly<{
+interface LayoutProps {
   children: React.ReactNode;
-}>) {
+}
 
-  
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="sandip.jpg" />
+        <title>Sandip Ghimire - Portfolio</title>
       </head>
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
-}
+};
+
+export default Layout;
