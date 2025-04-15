@@ -699,7 +699,8 @@ const SinglePagePortfolio = () => {
                         </div>
 
                         {/* See More Button */}
-                        {visibleItems < currentCategoryLength && (
+                        {/* See More Button */}
+                        {(currentCategoryLength ?? 0) > visibleItems && (
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -719,6 +720,7 @@ const SinglePagePortfolio = () => {
                                 </button>
                             </motion.div>
                         )}
+
                     </div>
                 </section>
 
