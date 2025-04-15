@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaBriefcase, FaGraduationCap, FaPhoneAlt, FaPhone, FaCalendar, FaExternalLinkAlt, FaCheck, FaLink, FaComment, FaUser, FaPalette, FaCode, FaCamera, FaPlus } from 'react-icons/fa';
+import Link from 'next/link';
 
 const SinglePagePortfolio = () => {
     const [activeSection, setActiveSection] = useState('home');
@@ -38,13 +39,13 @@ const SinglePagePortfolio = () => {
                 "Payment gateway integration",
                 "Order tracking system"
             ],
-            image: "/project1.jpg",
+            image: "/E-commerce.jpg",
             github: "#",
             demo: "#"
         },
         {
             title: "Job Portal Website",
-            tech: "Next.js, Express.js, MongoDB, Tailwind CSS",
+            tech: "React.js, Express.js, MongoDB, Tailwind CSS",
             description: "Platform for employers and job seekers to connect locally",
             features: [
                 "User roles (Employer & Job Seeker)",
@@ -52,13 +53,26 @@ const SinglePagePortfolio = () => {
                 "Search and filter jobs",
                 "User profile management"
             ],
-            image: "/project2.jpg",
-            github: "#",
+            image: "/local-job-portal.jpg",
+            github: "https://github.com/sandipghiimire/localjobportal",
             demo: "#"
         },
         {
-            title: "Hospital Management System",
-            tech: "React, Node.js, MySQL, Bootstrap",
+            title: "Portfolio",
+            tech: "Next.js, Tailwindcss, Node.js",
+            description: "I have made my Portfolio Website.",
+            features: [
+                "You can download my CV on one click",
+                "We can connect easily",
+                "Responsive design",
+            ],
+            image: "/portfolio.png",
+            github: "https://github.com/sandipghiimire/portfolio",
+            demo: "#"
+        },
+        {
+            title: "Futsal Booking System",
+            tech: "PHP, HTML, MySQL, Bootstrap",
             description: "Web-based system to manage hospital operations",
             features: [
                 "Patient registration and appointment",
@@ -66,22 +80,8 @@ const SinglePagePortfolio = () => {
                 "Billing and reports",
                 "Admin dashboard with analytics"
             ],
-            image: "/project3.jpg",
-            github: "#",
-            demo: "#"
-        },
-        {
-            title: "Snake Game",
-            tech: "JavaScript, HTML5, CSS3",
-            description: "Classic snake game with multiple levels and scoring",
-            features: [
-                "Multiple difficulty levels",
-                "Live score and high score tracking",
-                "Responsive design",
-                "Custom UI/UX design"
-            ],
-            image: "/project4.jpg",
-            github: "#",
+            image: "/Futsal-scaled.jpg",
+            github: "https://github.com/sandipghiimire/futsal",
             demo: "#"
         }
     ];
@@ -94,38 +94,38 @@ const SinglePagePortfolio = () => {
 
     const experience = [
         {
-            role: "Full Stack Developer",
-            company: "Tech Corp Solutions",
-            duration: "2022 - Present",
-            description: "Led development of enterprise-level web applications using modern MERN stack",
-            skills: ["React", "Node.js", "AWS", "GraphQL"],
-            projects: "#"
+            role: "Graphic Designer",
+            company: "Bizhub IT Pvt. Ltd. (OTTISH)",
+            duration: "2022 - 2025",
+            description: "Designed visual content for marketing, branding, and social media campaigns. Collaborated with digital marketing and animation teams to deliver creative assets that aligned with brand goals. Led the creation of brand identities, product mockups, and promotional materials for various clients.",
+            skills: ["Adobe Photoshop", "Adobe Illustrator", "Figma", "Canva", "Typography"],
+            projects: "https://drive.google.com/drive/folders/1KB435guzkG5vdAivomhS6IKJcQNmYUQe?usp=drive_link"
         },
         {
-            role: "Frontend Developer",
-            company: "Digital Innovations Ltd",
-            duration: "2020 - 2022",
-            description: "Developed customer-facing interfaces and design systems",
-            skills: ["TypeScript", "Next.js", "Figma", "Jest"],
+            role: "Software Developer",
+            company: "Nuptse Technology Pvt. Ltd.",
+            duration: "2025 - Current",
+            description: "Building scalable web applications using modern technologies like TypeScript and Next.js. Collaborating closely with UI/UX designers to implement responsive and accessible user interfaces. Involved in API integration, testing, and performance optimization for high-traffic platforms.",
+            skills: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Figma", "REST API", "Git"],
             projects: "#"
         }
+        
     ];
 
     const portfolioItems = {
         graphicDesign: [
-            { id: 1, image: '/images/portfolio/design-1.jpg', title: 'Brand Identity', category: 'design', driveLink: 'https://drive.google.com/design-1-link' },
-            { id: 2, image: '/images/portfolio/design-2.jpg', title: 'Poster Design', category: 'design' },
-            { id: 3, image: '/images/portfolio/design-3.jpg', title: 'Logo Design', category: 'design' },
-            { id: 4, image: '/images/portfolio/design-3.jpg', title: 'Logo Design', category: 'design' },
-            { id: 5, image: '/images/portfolio/design-3.jpg', title: 'Logo Design', category: 'design' },
-            { id: 6, image: '/images/portfolio/design-3.jpg', title: 'Logo Design', category: 'design' },
-            { id: 7, image: '/images/portfolio/design-3.jpg', title: 'Logo Design', category: 'design' },
+            { id: 1, image: '/portfolio/New Year 2082.jpg', title: 'Festival Post', category: 'Design', driveLink: 'https://drive.google.com/file/d/1d54UDdMvLaRBu7Yt0aIMXd1Nt0x3QMW9/view?usp=drive_link' },
+            { id: 2, image: '/portfolio/Design 1.jpg', title: 'Poster Design', category: 'Design', driveLink: 'https://drive.google.com/file/d/1PNcp3M_mpQnxPpNA_M5MEKbdskAFKRcF/view?usp=drive_link' },
+            { id: 3, image: '/portfolio/Logo.png', title: 'Logo Design', category: 'Design', driveLink: 'https://drive.google.com/file/d/1X85MXAV9AzoPunCLlyiMRkQ3h83YNYk-/view?usp=drive_link' },
+            { id: 4, image: '/portfolio/Product Design/NIVEA Product Lay_s.jpg', title: 'Product Design', category: 'Design', driveLink: 'https://drive.google.com/file/d/1LPKMQggYh7aAMH-8jYvw8yriFN8aNYPf/view?usp=drive_link' },
+            { id: 5, image: '/portfolio/card/Tech Trend - Card Front.jpg', title: 'Business Card Design', category: 'Card Design', driveLink: 'https://drive.google.com/file/d/1HRh0zIEToYEYdFxHK-Hp3-W97T89HTC3/view?usp=drive_link' },
+            { id: 6, image: '/Portfolio-Desk.jpg', title: 'Design Portfolio', category: 'Drive Link', driveLink: 'https://drive.google.com/drive/folders/1KB435guzkG5vdAivomhS6IKJcQNmYUQe?usp=drive_link' }
         ],
         webProjects: [
-            { id: 4, image: '/images/portfolio/web-1.jpg', title: 'Web Application', category: 'web' },
+            { id: 1, image: '/local-job-portal.jpg', title: 'Web Application', category: 'web' },
         ],
         photography: [
-            { id: 5, image: '/images/portfolio/photo-1.jpg', title: 'Nature Photography', category: 'photo' },
+            { id: 2, image: '/images/portfolio/photo-1.jpg', title: 'Nature Photography', category: 'photo' },
         ]
     };
 
@@ -326,11 +326,11 @@ const SinglePagePortfolio = () => {
                             >
                                 <div className="inline-flex items-center gap-3 text-gray-300 hover:text-blue-400 transition-colors group">
                                     <FaEnvelope className="text-xl opacity-70 group-hover:opacity-100 transition-opacity" />
-                                    <span className="text-lg">sandipghimire@gmail.com</span>
+                                    <span className="text-lg">sandipghimire.np@gmail.com</span>
                                 </div><br />
                                 <div className="inline-flex items-center gap-3 text-gray-300 hover:text-cyan-400 transition-colors group">
                                     <FaPhone className="text-xl opacity-70 group-hover:opacity-100 transition-opacity" />
-                                    <span className="text-lg">9869692922</span>
+                                    <span className="text-lg">9869292044</span>
                                 </div>
                             </motion.div>
 
@@ -410,8 +410,7 @@ const SinglePagePortfolio = () => {
                                         transition={{ delay: 0.2 }}
                                         className="text-xl text-gray-300 leading-relaxed"
                                     >
-                                        Passionate MERN stack developer specializing in building modern web applications.
-                                        Experienced in creating efficient solutions using Next.js, React, and Node.js.
+                                       Creative Graphic Designer with a passion for visual storytelling and impactful design. I specialize in crafting brand identities, marketing materials, and digital assets that not only look stunning but also communicate effectively. With experience in modern tools and a strong foundation in web technologies, I bring both creativity and functionality to every project.
                                     </motion.p>
 
                                     <motion.div
@@ -438,7 +437,7 @@ const SinglePagePortfolio = () => {
 
                             {/* Right Column - Skills Grid */}
                             <div className="grid grid-cols-2 gap-4 w-full md:max-w-md">
-                                {['Graphic Design', 'Next.js', 'React', 'Node.js', 'MongoDB', 'TypeScript'].map((skill, i) => (
+                                {['Graphic Design', 'Video Editor', 'Next.js', 'React', 'Node.js'].map((skill, i) => (
                                     <motion.div
                                         key={i}
                                         initial={{ opacity: 0, y: 20 }}
@@ -454,8 +453,7 @@ const SinglePagePortfolio = () => {
                                             {skill === 'Next.js' && 'Full-stack framework expertise'}
                                             {skill === 'React' && 'Component-based architecture'}
                                             {skill === 'Node.js' && 'Backend services & APIs'}
-                                            {skill === 'MongoDB' && 'Database design & optimization'}
-                                            {skill === 'TypeScript' && 'Type-safe development'}
+                                            {skill === 'Video Editor' && 'Creative Video Edit.(Premiere Pro)'}
                                         </p>
                                     </motion.div>
                                 ))}
@@ -527,6 +525,7 @@ const SinglePagePortfolio = () => {
                         </motion.div>
                     </div>
                 </section>
+
                 {/* Projects Section */}
                 <section id="projects" className="py-20 relative overflow-hidden">
                     {/* Decorative background elements */}
@@ -672,31 +671,45 @@ const SinglePagePortfolio = () => {
 
                         {/* Portfolio Grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                            {getPortfolioItems().map((item) => (
-                                <motion.div
-                                    key={item.id}
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ duration: 0.3 }}
-                                    className="group relative overflow-hidden rounded-xl border border-gray-800 hover:border-blue-400/30 transition-all"
-                                >
-                                    <div className="relative aspect-square">
-                                        <img
-                                            src={item.image}
-                                            alt={item.title}
-                                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                            loading="lazy"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                                            <div>
-                                                <h3 className="text-white font-semibold mb-1">{item.title}</h3>
-                                                <span className="text-sm text-blue-400">{item.category}</span>
+                            {getPortfolioItems().map((item) => {
+                                const Wrapper = ({ children }: { children: React.ReactNode }) =>
+                                    item.driveLink ? (
+                                        <a href={item.driveLink} target="_blank" rel="noopener noreferrer">
+                                            {children}
+                                        </a>
+                                    ) : (
+                                        <>{children}</>
+                                    );
+
+                                return (
+                                    <motion.div
+                                        key={item.id}
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ duration: 0.3 }}
+                                        className="group relative overflow-hidden rounded-xl border border-gray-800 hover:border-blue-400/30 transition-all"
+                                    >
+                                        <Wrapper>
+                                            <div className="relative aspect-square cursor-pointer">
+                                                <img
+                                                    src={item.image}
+                                                    alt={item.title}
+                                                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                                    loading="lazy"
+                                                />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                    <div>
+                                                        <h3 className="text-white font-semibold mb-1">{item.title}</h3>
+                                                        <span className="text-sm text-blue-400">{item.category}</span>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            ))}
+                                        </Wrapper>
+                                    </motion.div>
+                                );
+                            })}
                         </div>
+
 
                         {/* See More Button */}
                         {(currentCategoryLength ?? 0) > visibleItems && (
