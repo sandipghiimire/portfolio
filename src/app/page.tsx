@@ -17,14 +17,6 @@ const SinglePagePortfolio = () => {
         message: ""
     });
 
-    type PortfolioItem = {
-        id: number;
-        image: string;
-        title: string;
-        category: string;
-        driveLink?: string;
-      };
-
     const sections = [
         { id: 'home', name: 'Home' },
         { id: 'about', name: 'About' },
@@ -128,17 +120,22 @@ const SinglePagePortfolio = () => {
             { id: 5, image: '/images/portfolio/design-3.jpg', title: 'Logo Design', category: 'design' },
             { id: 6, image: '/images/portfolio/design-3.jpg', title: 'Logo Design', category: 'design' },
             { id: 7, image: '/images/portfolio/design-3.jpg', title: 'Logo Design', category: 'design' },
-            // Add more items...
         ],
         webProjects: [
             { id: 4, image: '/images/portfolio/web-1.jpg', title: 'Web Application', category: 'web' },
-            // Add more items...
         ],
         photography: [
             { id: 5, image: '/images/portfolio/photo-1.jpg', title: 'Nature Photography', category: 'photo' },
-            // Add more items...
         ]
     };
+
+    type PortfolioItem = {
+        id: number;
+        image: string;
+        title: string;
+        category: string;
+        driveLink?: string;
+      };
 
     const getPortfolioItems = (): PortfolioItem[] => {
         const items: PortfolioItem[] = {
@@ -289,7 +286,7 @@ const SinglePagePortfolio = () => {
                             className="order-2 md:order-1 w-full md:w-1/2 flex justify-center"
                         >
                             <div className="relative rounded-full overflow-hidden border-4 border-blue-400/30 hover:border-blue-400/50 transition-all duration-300 group w-[400px] h-[400px]">
-                                <motion.image 
+                                <motion.img 
                                     src="/sandip.jpg"
                                     alt="Sandip Ghimire"
                                     className="w-full h-full object-cover rounded-full"
@@ -555,9 +552,9 @@ const SinglePagePortfolio = () => {
                                         transition={{ delay: i * 0.1 }}
                                         className="group relative overflow-hidden rounded-2xl border border-gray-800 hover:border-blue-400/30 bg-gray-900/50 backdrop-blur-sm transition-all duration-300"
                                     >
-                                        {/* Project image */}
+                                        {/* Project img */}
                                         <div className="relative h-48 overflow-hidden">
-                                            <image 
+                                            <img 
                                                 src={project.image}
                                                 alt={project.title}
                                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -682,7 +679,7 @@ const SinglePagePortfolio = () => {
                                     className="group relative overflow-hidden rounded-xl border border-gray-800 hover:border-blue-400/30 transition-all"
                                 >
                                     <div className="relative aspect-square">
-                                        <image 
+                                        <img 
                                             src={item.image}
                                             alt={item.title}
                                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
