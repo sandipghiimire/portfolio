@@ -699,7 +699,6 @@ const SinglePagePortfolio = () => {
                         </div>
 
                         {/* See More Button */}
-                        {/* See More Button */}
                         {(currentCategoryLength ?? 0) > visibleItems && (
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
