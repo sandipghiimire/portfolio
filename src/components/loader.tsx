@@ -2,60 +2,101 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
-const Loader = () => {
+const Loader = ({ logo = "/sandip.jpg" }) => {
   const [progress, setProgress] = useState(0);
-  const [isDone, setIsDone] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
-  // Correct usage of useEffect: Always at top level
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev < 100) return prev + 1;
         clearInterval(interval);
-        setTimeout(() => setIsDone(true), 500); // Delay before fading out
+        setTimeout(() => setIsVisible(false), 1000);
         return 100;
       });
-    }, 20);
+    }, 30);
 
     return () => clearInterval(interval);
-  }, []); // Empty dependency array to run only once
+  }, []);
 
   return (
     <AnimatePresence>
-      {!isDone && (
+      {isVisible && (
         <motion.div
           key="loader"
-          initial={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          className="fixed inset-0 bg-black text-white flex flex-col items-center justify-center z-50"
-          aria-label="Loading screen"
+          className="fixed inset-0 bg-neutral-900 flex flex-col items-center justify-center z-50 space-y-8"
         >
+          {/* Logo Image with subtle animation */}
           <motion.div
-            className="text-4xl font-semibold mb-6"
-            animate={{ opacity: [0.4, 1, 0.4] }}
-            transition={{ repeat: Infinity, duration: 1 }}
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="relative w-40 h-40"
           >
-            Loading {progress}%
+            <Image
+              src={logo}
+              alt="Logo"
+              fill
+              className="object-contain"
+              priority
+            />
           </motion.div>
 
-          <div className="flex space-x-4 mt-4">
-            {[0, 1, 2].map((i) => (
+          {/* Progress Container */}
+          <div className="w-64 space-y-4">
+            {/* Progress Bar */}
+            <motion.div
+              className="h-2 bg-neutral-700 rounded-full overflow-hidden"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
+            >
               <motion.div
-                key={i}
-                className="w-4 h-4 bg-white rounded-full"
-                animate={{
-                  y: [0, -15, 0],
-                }}
-                transition={{
-                  duration: 0.6,
-                  repeat: Infinity,
-                  delay: i * 0.2,
-                }}
+                className="h-full bg-white origin-left"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: progress / 100 }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
               />
-            ))}
+            </motion.div>
+
+            {/* Percentage Text */}
+            <motion.div
+              className="text-center text-neutral-400 text-sm font-medium"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              {progress}% LOADED
+            </motion.div>
           </div>
+
+          {/* Powered By Text */}
+          <motion.div
+            className="absolute bottom-8 text-neutral-500 text-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+          >
+            Powered by <span className="text-red-600 font-bold">Sandip Ghimire</span>
+          </motion.div>
+
+          {/* Subtle Background Animation */}
+          <motion.div
+            className="absolute inset-0 -z-10"
+            animate={{
+              backgroundColor: [
+                "rgba(23,23,23,1)",
+                "rgba(30,30,30,1)",
+                "rgba(23,23,23,1)",
+              ],
+            }}
+            transition={{ duration: 4, repeat: Infinity }}
+          />
         </motion.div>
       )}
     </AnimatePresence>
