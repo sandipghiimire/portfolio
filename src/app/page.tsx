@@ -80,7 +80,7 @@ const SinglePagePortfolio = () => {
                 "Admin dashboard with analytics"
             ],
             image: "/Futsal-scaled.jpg",
-            github: "https://github.com/sandipghiimire/futsal",
+            github: "https://github.com/sandipghiimire/Project",
             demo: "#"
         }
     ];
