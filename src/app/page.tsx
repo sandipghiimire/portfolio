@@ -19,16 +19,6 @@ const SinglePagePortfolio = () => {
         message: ""
     });
 
-    useEffect(() => {
-    const timeout = setTimeout(() => {
-      setLoading(false);
-    }, 2300); 
-
-    return () => clearTimeout(timeout);
-  }, []);
-
-  if (loading) return <Loader />;
-
     const sections = [
         { id: 'home', name: 'Home' },
         { id: 'about', name: 'About' },
@@ -224,6 +214,16 @@ const SinglePagePortfolio = () => {
             setIsSubmitting(false);
         }
     };
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setLoading(false);
+        }, 2300);
+
+        return () => clearTimeout(timeout);
+    }, []);
+
+    if (loading) return <Loader />;
 
 
     return (
