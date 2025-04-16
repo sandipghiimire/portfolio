@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaBriefcase, FaGraduationCap, FaPhoneAlt, FaPhone, FaCalendar, FaExternalLinkAlt, FaCheck, FaLink, FaComment, FaUser, FaPalette, FaCode, FaCamera, FaPlus, FaHome, FaFolderOpen, FaFacebook } from 'react-icons/fa';
+import Loader from '@/components/loader';
 
 const SinglePagePortfolio = () => {
     const [loading, setLoading] = useState(true);
