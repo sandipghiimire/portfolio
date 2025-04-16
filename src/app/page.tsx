@@ -175,7 +175,7 @@ const SinglePagePortfolio = () => {
     }, []);
 
     useEffect(() => {
-        document.title = "Sandip Ghimire - Contact";
+        document.title = "Sandip Ghimire - Portfolio";
     }, []);
 
     const handleSubmit = async (e: React.FormEvent) => {
