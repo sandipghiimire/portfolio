@@ -22,7 +22,7 @@ const SinglePagePortfolio = () => {
     useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 2300); // Matches loading time (100 x 20ms = 2000ms + buffer)
+    }, 2300); 
 
     return () => clearTimeout(timeout);
   }, []);
