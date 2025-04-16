@@ -235,15 +235,18 @@ const SinglePagePortfolio = () => {
                         ))}
                     </div>
 
-                    {/* Mobile Navigation Button (Hamburger) - Top Right */}
-                    {/* <button
-                        className="md:hidden p-2 rounded-lg text-gray-300 hover:bg-gray-800/40 focus:outline-none focus:ring-2 focus:ring-blue-400/50"
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button> */}
+                    {isMenuOpen && (
+                        <div className="md:hidden fixed top-16 right-4 left-4 bg-gray-900 rounded-lg shadow-lg p-4 z-50">
+                            <ul className="flex flex-col gap-4 text-gray-200">
+                                <li><a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a></li>
+                                <li><a href="#about" onClick={() => setIsMenuOpen(false)}>About</a></li>
+                                <li><a href="#projects" onClick={() => setIsMenuOpen(false)}>Projects</a></li>
+                                <li><a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
+                            </ul>
+                        </div>
+                    )}
+
+
                 </div>
             </nav>
 
