@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaBriefcase, FaGraduationCap, FaPhoneAlt, FaPhone, FaCalendar, FaExternalLinkAlt, FaCheck, FaLink, FaComment, FaUser, FaPalette, FaCode, FaCamera, FaPlus, FaHome, FaFolderOpen, FaFacebook } from 'react-icons/fa';
 
 const SinglePagePortfolio = () => {
+    const [loading, setLoading] = useState(true);
     const [activeSection, setActiveSection] = useState('home');
     const [activeTab, setActiveTab] = useState('design');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,6 +17,16 @@ const SinglePagePortfolio = () => {
         email: "",
         message: ""
     });
+
+    useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 2300); // Matches loading time (100 x 20ms = 2000ms + buffer)
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  if (loading) return <Loader />;
 
     const sections = [
         { id: 'home', name: 'Home' },
