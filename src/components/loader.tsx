@@ -7,6 +7,7 @@ const Loader = () => {
   const [progress, setProgress] = useState(0);
   const [isDone, setIsDone] = useState(false);
 
+  // Correct usage of useEffect: Always at top level
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((prev) => {
@@ -18,7 +19,7 @@ const Loader = () => {
     }, 20);
 
     return () => clearInterval(interval);
-  }, []);
+  }, []); // Empty dependency array to run only once
 
   return (
     <AnimatePresence>
