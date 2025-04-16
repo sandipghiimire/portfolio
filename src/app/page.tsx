@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaBriefcase, FaGraduationCap, FaPhoneAlt, FaPhone, FaCalendar, FaExternalLinkAlt, FaCheck, FaLink, FaComment, FaUser, FaPalette, FaCode, FaCamera, FaPlus } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaBriefcase, FaGraduationCap, FaPhoneAlt, FaPhone, FaCalendar, FaExternalLinkAlt, FaCheck, FaLink, FaComment, FaUser, FaPalette, FaCode, FaCamera, FaPlus, FaHome, FaFolderOpen, FaFacebook } from 'react-icons/fa';
 
 const SinglePagePortfolio = () => {
     const [activeSection, setActiveSection] = useState('home');
@@ -108,7 +108,7 @@ const SinglePagePortfolio = () => {
             skills: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Figma", "REST API", "Git"],
             projects: "#"
         }
-        
+
     ];
 
     const portfolioItems = {
@@ -217,7 +217,7 @@ const SinglePagePortfolio = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
             {/* Navigation */}
-            <nav className="fixed w-full top-0 bg-transparent backdrop-blur-sm z-50">
+            <nav className="fixed w-full top-0 bg-transparent sm:backdrop-blur-sm z-50">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex gap-8">
@@ -235,58 +235,37 @@ const SinglePagePortfolio = () => {
                         ))}
                     </div>
 
-                    {/* Mobile Menu Button */}
-                    <button
+                    {/* Mobile Navigation Button (Hamburger) - Top Right */}
+                    {/* <button
                         className="md:hidden p-2 rounded-lg text-gray-300 hover:bg-gray-800/40 focus:outline-none focus:ring-2 focus:ring-blue-400/50"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
-                    </button>
+                    </button> */}
                 </div>
-
-                {/* Mobile Navigation */}
-                {isMenuOpen && (
-                    <div className="md:hidden absolute w-full bg-transparent backdrop-blur-sm">
-                        <div className="px-4 py-3 flex flex-col gap-4">
-                            {sections.map(section => (
-                                <a
-                                    key={section.id}
-                                    href={`#${section.id}`}
-                                    className={`${activeSection === section.id
-                                        ? 'text-blue-400'
-                                        : 'text-gray-300 hover:text-blue-300'
-                                        } px-3 py-2 rounded-lg transition-colors duration-300 hover:bg-gray-800/30`}
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    {section.name}
-                                </a>
-                            ))}
-                        </div>
-                    </div>
-                )}
             </nav>
 
             {/* Sections */}
-            <main className="pt-20 px-4 md:px-8">
+            <main className="pt-6 pb-10 px-4 md:pt-20 md:px-8">
                 {/* Home Section */}
-                <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 relative overflow-hidden">
+                <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 relative overflow-hidden pt-20 md:pt-0">
                     {/* Animated background elements */}
                     <div className="absolute inset-0 z-0">
-                        <div className="absolute w-[800px] h-[800px] -top-48 -left-48 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-full blur-3xl" />
-                        <div className="absolute w-[600px] h-[600px] -bottom-32 -right-32 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-full blur-3xl" />
+                        <div className="absolute w-[300px] h-[300px] -top-24 -left-24 md:w-[800px] md:h-[800px] md:-top-48 md:-left-48 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-full blur-xl md:blur-3xl" />
+                        <div className="absolute w-[250px] h-[250px] -bottom-16 -right-16 md:w-[600px] md:h-[600px] md:-bottom-32 md:-right-32 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-full blur-xl md:blur-3xl" />
                     </div>
 
-                    <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-16 relative z-10">
-                        {/* image Container */}
+                    <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-6 md:gap-16 relative z-10">
+                        {/* Image Container */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="order-2 md:order-1 w-full md:w-1/2 flex justify-center"
                         >
-                            <div className="relative rounded-full overflow-hidden border-4 border-blue-400/30 hover:border-blue-400/50 transition-all duration-300 group w-[400px] h-[400px]">
+                            <div className="relative rounded-full overflow-hidden border-4 border-blue-400/30 hover:border-blue-400/50 transition-all duration-300 group w-[280px] h-[280px] md:w-[400px] md:h-[400px]">
                                 <motion.img
                                     src="/sandip.jpg"
                                     alt="Sandip Ghimire"
@@ -295,8 +274,6 @@ const SinglePagePortfolio = () => {
                                     transition={{ type: "spring", stiffness: 300 }}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 mix-blend-overlay group-hover:opacity-50 transition-opacity" />
-
-
                             </div>
                         </motion.div>
 
@@ -311,7 +288,7 @@ const SinglePagePortfolio = () => {
                                 initial={{ backgroundPosition: "0% 50%" }}
                                 animate={{ backgroundPosition: "100% 50%" }}
                                 transition={{ duration: 4, repeat: Infinity, repeatType: "reverse" }}
-                                className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent bg-300%"
+                                className="text-3xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent bg-300%"
                             >
                                 Sandip Ghimire
                             </motion.h1>
@@ -321,27 +298,85 @@ const SinglePagePortfolio = () => {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.4 }}
-                                className="mb-8 space-y-3"
+                                className="mb-8 md:space-y-5"
                             >
-                                <div className="inline-flex items-center gap-3 text-gray-300 hover:text-blue-400 transition-colors group">
-                                    <FaEnvelope className="text-xl opacity-70 group-hover:opacity-100 transition-opacity" />
-                                    <span className="text-lg">sandipghimire.np@gmail.com</span>
-                                </div><br />
-                                <div className="inline-flex items-center gap-3 text-gray-300 hover:text-cyan-400 transition-colors group">
-                                    <FaPhone className="text-xl opacity-70 group-hover:opacity-100 transition-opacity" />
-                                    <span className="text-lg">9869292044</span>
+                                {/* Desktop Email & Phone - Hidden on Mobile */}
+                                <div className="hidden md:block">
+                                    <motion.div
+                                        whileHover={{ x: 5 }}
+                                        className="group flex items-center gap-4 p-4 rounded-xl bg-gray-900/40 hover:bg-gray-900/60 transition-all"
+                                    >
+                                        <div className="p-3 bg-blue-400/10 rounded-full">
+                                            <FaEnvelope className="text-2xl text-blue-400" />
+                                        </div>
+                                        <div>
+                                            <p className="text-sm text-gray-400 mb-1">Email</p>
+                                            <a
+                                                href="mailto:sandipghimire.np@gmail.com"
+                                                className="text-lg text-gray-300 hover:text-blue-400 break-all"
+                                            >
+                                                sandipghimire.np@gmail.com
+                                            </a>
+                                        </div>
+                                    </motion.div>
+
+                                    <motion.div
+                                        whileHover={{ x: 5 }}
+                                        className="group mt-5 flex items-center gap-4 p-4 rounded-xl bg-gray-900/40 hover:bg-gray-900/60 transition-all"
+                                    >
+                                        <div className="p-3 bg-cyan-400/10 rounded-full">
+                                            <FaPhone className="text-2xl text-cyan-400" />
+                                        </div>
+                                        <div>
+                                            <p className="text-sm text-gray-400 mb-1">Phone</p>
+                                            <a
+                                                href="tel:+9779869292044"
+                                                className="text-lg text-gray-300 hover:text-cyan-400"
+                                            >
+                                                +977 986-9292044
+                                            </a>
+                                        </div>
+                                    </motion.div>
+                                </div>
+
+                                {/* Mobile Social Icons - Visible only on Small Screens */}
+                                <div className="md:hidden flex justify-center gap-6 py-4">
+                                    <motion.a
+                                        href="https://facebook.com/sandip.ghiimire"
+                                        target="_blank"
+                                        whileHover={{ scale: 1.2 }}
+                                        className="text-blue-400 hover:text-blue-300"
+                                    >
+                                        <FaFacebook className="text-3xl" />
+                                    </motion.a>
+                                    <motion.a
+                                        href="https://www.linkedin.com/in/sandip-ghiimire/"
+                                        target="_blank"
+                                        whileHover={{ scale: 1.2 }}
+                                        className="text-cyan-400 hover:text-cyan-300"
+                                    >
+                                        <FaLinkedin className="text-3xl" />
+                                    </motion.a>
+                                    <motion.a
+                                        href="https://github.com/sandipghiimire"
+                                        target="_blank"
+                                        whileHover={{ scale: 1.2 }}
+                                        className="text-gray-300 hover:text-white"
+                                    >
+                                        <FaGithub className="text-3xl" />
+                                    </motion.a>
                                 </div>
                             </motion.div>
 
                             {/* Buttons */}
-                            <div className="flex gap-4 justify-center md:justify-start flex-wrap">
+                            <div className="flex flex-col md:flex-row gap-3 md:gap-4 justify-center md:justify-start flex-wrap">
                                 <motion.a
                                     href="#contact"
                                     whileHover={{ y: -2 }}
                                     whileTap={{ scale: 0.98 }}
-                                    className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl flex items-center gap-3 shadow-2xl hover:shadow-blue-500/30 transition-all group"
+                                    className="px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg md:rounded-xl flex items-center justify-center gap-2 md:gap-3 shadow-lg hover:shadow-blue-500/30 transition-all group text-sm md:text-base"
                                 >
-                                    <FaEnvelope className="text-xl transition-transform group-hover:scale-125" />
+                                    <FaEnvelope className="text-lg md:text-xl transition-transform group-hover:scale-125" />
                                     <span className="font-semibold">Contact Me</span>
                                 </motion.a>
 
@@ -350,9 +385,9 @@ const SinglePagePortfolio = () => {
                                     download
                                     whileHover={{ y: -2 }}
                                     whileTap={{ scale: 0.98 }}
-                                    className="px-8 py-4 bg-gray-900/50 backdrop-blur-sm border-2 border-gray-800 hover:border-blue-500 text-blue-400 rounded-xl flex items-center gap-3 shadow-2xl hover:shadow-blue-500/20 transition-all group"
+                                    className="px-6 py-3 md:px-8 md:py-4 bg-gray-900/50 backdrop-blur-sm border-2 border-gray-800 hover:border-blue-500 text-blue-400 rounded-lg md:rounded-xl flex items-center justify-center gap-2 md:gap-3 shadow-lg hover:shadow-blue-500/20 transition-all group text-sm md:text-base"
                                 >
-                                    <FaFileDownload className="text-xl transition-transform group-hover:scale-125" />
+                                    <FaFileDownload className="text-lg md:text-xl transition-transform group-hover:scale-125" />
                                     <span className="font-semibold">Download CV</span>
                                 </motion.a>
                             </div>
@@ -362,12 +397,12 @@ const SinglePagePortfolio = () => {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.6 }}
-                                className="mt-8 flex flex-wrap gap-3 justify-center md:justify-start"
+                                className="mt-6 md:mt-8 flex flex-wrap gap-2 md:gap-3 justify-center md:justify-start"
                             >
                                 {['React', 'Node.js', 'Graphic Design', 'UI/UX', 'MERN Stack'].map((skill) => (
                                     <span
                                         key={skill}
-                                        className="px-4 py-2 bg-gray-900/50 backdrop-blur-sm rounded-full text-sm border border-gray-800 hover:border-blue-400 transition-colors"
+                                        className="px-3 py-1.5 md:px-4 md:py-2 bg-gray-900/50 backdrop-blur-sm rounded-full text-xs md:text-sm border border-gray-800 hover:border-blue-400 transition-colors"
                                     >
                                         {skill}
                                     </span>
@@ -378,10 +413,10 @@ const SinglePagePortfolio = () => {
                 </section>
 
                 {/* About Section */}
-                <section id="about" className="py-20 relative overflow-hidden">
+                <section id="about" className="py-16 md:py-20 relative overflow-hidden">
                     {/* Decorative background elements */}
                     <div className="absolute inset-0 z-0">
-                        <div className="absolute w-[600px] h-[600px] -top-48 -left-48 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-full blur-3xl" />
+                        <div className="absolute w-[400px] h-[400px] -top-32 -left-32 md:w-[600px] md:h-[600px] md:-top-48 md:-left-48 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-full blur-xl md:blur-3xl" />
                     </div>
 
                     <motion.div
@@ -390,52 +425,56 @@ const SinglePagePortfolio = () => {
                         viewport={{ once: true, margin: "-100px" }}
                         className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10"
                     >
-                        <div className="flex flex-col md:flex-row gap-12 items-start">
+                        <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
                             {/* Left Column - Content */}
-                            <div className="flex-1 space-y-8">
+                            <div className="flex-1 space-y-6 md:space-y-8">
                                 <motion.h2
                                     initial={{ backgroundPosition: "0% 50%" }}
                                     animate={{ backgroundPosition: "100% 50%" }}
                                     transition={{ duration: 4, repeat: Infinity, repeatType: "reverse" }}
-                                    className="text-4xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent bg-300%"
+                                    className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent bg-300%"
                                 >
                                     About Me
                                 </motion.h2>
 
-                                <div className="space-y-6">
+                                <div className="space-y-4 md:space-y-6">
                                     <motion.p
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
                                         transition={{ delay: 0.2 }}
-                                        className="text-xl text-gray-300 leading-relaxed"
+                                        className="text-base md:text-xl text-gray-300 leading-relaxed text-justify"
                                     >
-                                       Creative Graphic Designer with a passion for visual storytelling and impactful design. I specialize in crafting brand identities, marketing materials, and digital assets that not only look stunning but also communicate effectively. With experience in modern tools and a strong foundation in web technologies, I bring both creativity and functionality to every project.
+                                        Creative Graphic Designer with a passion for visual storytelling and impactful design.
+                                        I specialize in crafting brand identities, marketing materials, and digital assets that
+                                        not only look stunning but also communicate effectively. With experience in modern tools
+                                        and a strong foundation in web technologies, I bring both creativity and functionality
+                                        to every project.
                                     </motion.p>
 
                                     <motion.div
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
                                         transition={{ delay: 0.4 }}
-                                        className="flex gap-6 items-center"
+                                        className="flex gap-4 md:gap-6 items-center"
                                     >
                                         <a
                                             href="https://github.com/sandipghiimire"
-                                            className="p-3 bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-blue-400 transition-all group"
+                                            className="p-2 md:p-3 bg-gray-900/50 backdrop-blur-sm rounded-lg md:rounded-xl border border-gray-800 hover:border-blue-400 transition-all group"
                                         >
-                                            <FaGithub className="text-3xl text-gray-300 group-hover:text-white transition-colors" />
+                                            <FaGithub className="text-2xl md:text-3xl text-gray-300 group-hover:text-white transition-colors" />
                                         </a>
                                         <a
                                             href="https://linkedin.com/in/sandip-ghiimire"
-                                            className="p-3 bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-blue-400 transition-all group"
+                                            className="p-2 md:p-3 bg-gray-900/50 backdrop-blur-sm rounded-lg md:rounded-xl border border-gray-800 hover:border-blue-400 transition-all group"
                                         >
-                                            <FaLinkedin className="text-3xl text-gray-300 group-hover:text-blue-500 transition-colors" />
+                                            <FaLinkedin className="text-2xl md:text-3xl text-gray-300 group-hover:text-blue-500 transition-colors" />
                                         </a>
                                     </motion.div>
                                 </div>
                             </div>
 
                             {/* Right Column - Skills Grid */}
-                            <div className="grid grid-cols-2 gap-4 w-full md:max-w-md">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 w-full md:max-w-md">
                                 {['Graphic Design', 'Video Editor', 'Next.js', 'React', 'Node.js'].map((skill, i) => (
                                     <motion.div
                                         key={i}
@@ -443,11 +482,11 @@ const SinglePagePortfolio = () => {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true, margin: "-50px" }}
                                         transition={{ delay: i * 0.1 }}
-                                        className="p-6 bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-blue-400 transition-colors group relative overflow-hidden"
+                                        className="p-4 md:p-6 bg-gray-900/50 backdrop-blur-sm rounded-lg md:rounded-xl border border-gray-800 hover:border-blue-400 transition-colors group relative overflow-hidden"
                                     >
                                         <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-                                        <h3 className="text-xl font-semibold text-blue-400">{skill}</h3>
-                                        <p className="text-sm text-gray-400 mt-2">
+                                        <h3 className="text-lg md:text-xl font-semibold text-blue-400">{skill}</h3>
+                                        <p className="text-xs md:text-sm text-gray-400 mt-1 md:mt-2">
                                             {skill === 'Graphic Design' && 'Eye-Catchy Design(Photoshop, Canva, Indesign, Illustrator)'}
                                             {skill === 'Next.js' && 'Full-stack framework expertise'}
                                             {skill === 'React' && 'Component-based architecture'}
@@ -817,10 +856,10 @@ const SinglePagePortfolio = () => {
                 </section>
 
                 {/* Contact Section */}
-                <section id="contact" className="py-20 relative overflow-hidden">
+                <section id="contact" className="py-12 md:py-20 relative overflow-hidden">
                     {/* Decorative background elements */}
                     <div className="absolute inset-0 z-0">
-                        <div className="absolute w-[800px] h-[800px] -top-48 -right-48 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-full blur-3xl" />
+                        <div className="absolute w-[400px] h-[400px] -top-24 -right-24 md:w-[800px] md:h-[800px] md:-top-48 md:-right-48 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-full blur-xl md:blur-3xl" />
                     </div>
 
                     <motion.div
@@ -828,47 +867,47 @@ const SinglePagePortfolio = () => {
                         whileInView={{ opacity: 1 }}
                         className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10"
                     >
-                        <div className="text-center mb-16">
-                            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                        <div className="text-center mb-12 md:mb-16">
+                            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                                 Get in Touch
                             </h2>
-                            <p className="text-gray-400 text-lg max-w-xl mx-auto">
+                            <p className="text-gray-400 text-base md:text-lg max-w-xl mx-auto">
                                 Let&apos;s collaborate! Whether you have a project in mind or just want to connect.
                             </p>
                         </div>
 
-                        <div className="grid md:grid-cols-2 gap-12">
+                        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
                             {/* Contact Info */}
-                            <div className="space-y-8">
+                            <div className="space-y-6 md:space-y-8">
                                 <motion.div
                                     whileHover={{ y: -5 }}
-                                    className="p-8 bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 hover:border-blue-400 transition-colors"
+                                    className="p-6 md:p-8 bg-gray-900/50 backdrop-blur-sm rounded-xl md:rounded-2xl border border-gray-800 hover:border-blue-400 transition-colors"
                                 >
-                                    <div className="flex flex-col gap-6">
-                                        <div className="flex items-center gap-6">
-                                            <div className="p-4 bg-blue-400/10 rounded-xl">
-                                                <FaEnvelope className="text-3xl text-blue-400" />
+                                    <div className="flex flex-col gap-4 md:gap-6">
+                                        <div className="flex items-center gap-4 md:gap-6">
+                                            <div className="p-3 md:p-4 bg-blue-400/10 rounded-lg md:rounded-xl">
+                                                <FaEnvelope className="text-2xl md:text-3xl text-blue-400" />
                                             </div>
                                             <div>
-                                                <h3 className="text-gray-400 mb-1">Email</h3>
+                                                <h3 className="text-gray-400 text-sm md:text-base mb-1">Email</h3>
                                                 <a
                                                     href="mailto:sandipghimire.np@gmail.com"
-                                                    className="text-xl text-gray-300 hover:text-blue-400 transition-colors"
+                                                    className="text-base md:text-xl text-gray-300 hover:text-blue-400 transition-colors break-all"
                                                 >
                                                     sandipghimire.np@gmail.com
                                                 </a>
                                             </div>
                                         </div>
 
-                                        <div className="flex items-center gap-6">
-                                            <div className="p-4 bg-cyan-400/10 rounded-xl">
-                                                <FaPhoneAlt className="text-3xl text-cyan-400" />
+                                        <div className="flex items-center gap-4 md:gap-6">
+                                            <div className="p-3 md:p-4 bg-cyan-400/10 rounded-lg md:rounded-xl">
+                                                <FaPhoneAlt className="text-2xl md:text-3xl text-cyan-400" />
                                             </div>
                                             <div>
-                                                <h3 className="text-gray-400 mb-1">Phone</h3>
+                                                <h3 className="text-gray-400 text-sm md:text-base mb-1">Phone</h3>
                                                 <a
                                                     href="tel:+9779869292044"
-                                                    className="text-xl text-gray-300 hover:text-cyan-400 transition-colors"
+                                                    className="text-base md:text-xl text-gray-300 hover:text-cyan-400 transition-colors"
                                                 >
                                                     +977 9869292044
                                                 </a>
@@ -878,22 +917,22 @@ const SinglePagePortfolio = () => {
                                 </motion.div>
 
                                 {/* Social Links */}
-                                <div className="flex gap-6 justify-center md:justify-start">
+                                <div className="flex gap-4 md:gap-6 justify-center md:justify-start">
                                     <motion.a
                                         whileHover={{ y: -3 }}
                                         href="https://linkedin.com"
                                         target="_blank"
-                                        className="p-4 bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-blue-400 text-gray-300 hover:text-blue-400 transition-colors"
+                                        className="p-3 md:p-4 bg-gray-900/50 backdrop-blur-sm rounded-lg md:rounded-xl border border-gray-800 hover:border-blue-400 text-gray-300 hover:text-blue-400 transition-colors"
                                     >
-                                        <FaLinkedin className="text-2xl" />
+                                        <FaLinkedin className="text-xl md:text-2xl" />
                                     </motion.a>
                                     <motion.a
                                         whileHover={{ y: -3 }}
                                         href="https://github.com"
                                         target="_blank"
-                                        className="p-4 bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-blue-400 text-gray-300 hover:text-blue-400 transition-colors"
+                                        className="p-3 md:p-4 bg-gray-900/50 backdrop-blur-sm rounded-lg md:rounded-xl border border-gray-800 hover:border-blue-400 text-gray-300 hover:text-blue-400 transition-colors"
                                     >
-                                        <FaGithub className="text-2xl" />
+                                        <FaGithub className="text-xl md:text-2xl" />
                                     </motion.a>
                                 </div>
                             </div>
@@ -902,7 +941,7 @@ const SinglePagePortfolio = () => {
                             <motion.form
                                 initial={{ opacity: 0, x: 50 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                className="space-y-6"
+                                className="space-y-4 md:space-y-6"
                                 onSubmit={handleSubmit}
                             >
                                 <div className="relative">
@@ -911,9 +950,9 @@ const SinglePagePortfolio = () => {
                                         value={formData.name}
                                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                         placeholder="Name"
-                                        className="w-full p-4 bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/30 outline-none transition-all"
+                                        className="w-full p-3 md:p-4 text-sm md:text-base bg-gray-900/50 backdrop-blur-sm rounded-lg md:rounded-xl border border-gray-800 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/30 outline-none transition-all"
                                     />
-                                    <FaUser className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500" />
+                                    <FaUser className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 text-gray-500 text-sm md:text-base" />
                                 </div>
 
                                 <div className="relative">
@@ -922,9 +961,9 @@ const SinglePagePortfolio = () => {
                                         value={formData.email}
                                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                         placeholder="Email"
-                                        className="w-full p-4 bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/30 outline-none transition-all"
+                                        className="w-full p-3 md:p-4 text-sm md:text-base bg-gray-900/50 backdrop-blur-sm rounded-lg md:rounded-xl border border-gray-800 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/30 outline-none transition-all"
                                     />
-                                    <FaEnvelope className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500" />
+                                    <FaEnvelope className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 text-gray-500 text-sm md:text-base" />
                                 </div>
 
                                 <div className="relative">
@@ -933,11 +972,10 @@ const SinglePagePortfolio = () => {
                                         placeholder="Message"
                                         value={formData.message}
                                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                        className="w-full p-4 bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/30 outline-none transition-all resize-none"
+                                        className="w-full p-3 md:p-4 text-sm md:text-base bg-gray-900/50 backdrop-blur-sm rounded-lg md:rounded-xl border border-gray-800 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/30 outline-none transition-all resize-none"
                                     ></textarea>
-                                    <FaComment className="absolute right-4 top-5 text-gray-500" />
+                                    <FaComment className="absolute right-3 md:right-4 top-4 md:top-5 text-gray-500 text-sm md:text-base" />
                                 </div>
-
                                 <motion.button
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
@@ -970,6 +1008,36 @@ const SinglePagePortfolio = () => {
                     </motion.div>
                 </section>
             </main>
+            {/* Mobile Bottom Navigation Bar */}
+            <div className="md:hidden fixed bottom-0 left-0 right-0 bg-gray-800/90 backdrop-blur-lg border-t border-gray-700/50 z-50">
+                <div className="flex justify-around items-center p-2">
+                    {sections.map(section => (
+                        <a
+                            key={section.id}
+                            href={`#${section.id}`}
+                            className={`p-3 rounded-full transition-colors duration-300 relative
+                        ${activeSection === section.id
+                                    ? 'text-blue-400'
+                                    : 'text-gray-300 hover:text-blue-300'}`}
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            {/* Section Icons */}
+                            {section.id === 'home' && <FaHome className="text-xl" />}
+                            {section.id === 'about' && <FaUser className="text-xl" />}
+                            {section.id === 'education' && <FaGraduationCap className="text-xl" />}
+                            {section.id === 'projects' && <FaCode className="text-xl" />}
+                            {section.id === 'portfolio' && <FaFolderOpen className="text-xl" />}
+                            {section.id === 'experience' && <FaBriefcase className="text-xl" />}
+                            {section.id === 'contact' && <FaEnvelope className="text-xl" />}
+
+                            {/* Active indicator */}
+                            {activeSection === section.id && (
+                                <span className="absolute bottom-1 left-1/2 w-1 h-1 bg-blue-400 rounded-full -translate-x-1/2"></span>
+                            )}
+                        </a>
+                    ))}
+                </div>
+            </div>
         </div>
     );
 };
