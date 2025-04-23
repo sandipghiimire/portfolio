@@ -53,12 +53,12 @@ const Loader = ({ logo = "/sandip.jpg" }) => {
             <motion.div
               className="h-2 bg-neutral-700 rounded-full overflow-hidden"
               initial={{ scaleX: 0 }}
-              animate={{ scaleX: 5 }}
+              animate={{ scaleX: 1 }}
               transition={{ duration: 0.4, delay: 0.3 }}
             >
               <motion.div
                 className="h-full bg-white origin-left"
-                initial={{ scaleX: 0 }}
+                initial={{ scaleX: 2 }}
                 animate={{ scaleX: progress / 100 }}
                 transition={{ duration: 0.8, ease: "easeInOut" }}
               />
