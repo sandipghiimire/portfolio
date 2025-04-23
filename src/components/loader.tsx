@@ -69,7 +69,7 @@ const Loader = ({ logo = "/sandip.jpg" }) => {
               className="text-center text-neutral-400 text-sm font-medium"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.2 }}
             >
               {progress}% LOADED
             </motion.div>
