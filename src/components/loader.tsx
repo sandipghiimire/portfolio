@@ -53,7 +53,7 @@ const Loader = ({ logo = "/sandip.jpg" }) => {
             <motion.div
               className="h-2 bg-neutral-700 rounded-full overflow-hidden"
               initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
+              animate={{ scaleX: 5 }}
               transition={{ duration: 0.4, delay: 0.3 }}
             >
               <motion.div
