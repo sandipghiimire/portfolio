@@ -100,5 +100,4 @@ const Loader = ({ logo = "/sandip.jpg" }) => {
     </AnimatePresence>
   );
 };
-// this is good
 export default Loader;
