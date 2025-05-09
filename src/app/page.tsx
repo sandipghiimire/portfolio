@@ -40,8 +40,8 @@ const SinglePagePortfolio = () => {
                 "CRUD Operation",
             ],
             image: "/blog.png",
-            github: "github.com/sandipghiimire/blog",
-            demo: "blogsandip.vercel.app"
+            github: "https://github.com/sandipghiimire/blog",
+            demo: "https://blogsandip.vercel.app/"
         },
         {
             title: "E-Commerce Platform",
@@ -54,8 +54,8 @@ const SinglePagePortfolio = () => {
                 "Order tracking system"
             ],
             image: "/E-commerce.jpg",
-            github: "#",
-            demo: "#"
+            github: "https://github.com/sandipghiimire/e-commerce",
+            demo: "https://ecommercesandip.vercel.app/"
         },
         {
             title: "Job Portal Website",
