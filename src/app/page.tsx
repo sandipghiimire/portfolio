@@ -31,6 +31,19 @@ const SinglePagePortfolio = () => {
 
     const projects = [
         {
+            title: "Blog Website",
+            tech: "React, Node.js, MongoDB, Stripe",
+            description: "Full-stack Blog Website",
+            features: [
+                "User authentication system",
+                "Blog management dashboard",
+                "CRUD Operation",
+            ],
+            image: "/blog.png",
+            github: "github.com/sandipghiimire/blog",
+            demo: "blogsandip.vercel.app"
+        },
+        {
             title: "E-Commerce Platform",
             tech: "React, Node.js, MongoDB, Stripe",
             description: "Full-stack e-commerce solution with payment integration",
