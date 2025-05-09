@@ -47,33 +47,31 @@ const Loader = ({ logo = "/sandip.jpg" }) => {
             />
           </motion.div>
 
-          {/* Progress Container */}
-          <div className="w-64 space-y-4">
-            {/* Progress Bar */}
-            <motion.div
-              className="h-2 bg-neutral-700 rounded-full overflow-hidden"
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.4, delay: 0.3 }}
-            >
-              <motion.div
-                className="h-full bg-white origin-left"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: progress / 100 }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
-              />
-            </motion.div>
+           <div className="w-64 space-y-4">
+      {/* Progress Bar */}
+      <motion.div
+        className="h-2 bg-neutral-700 rounded-full overflow-hidden"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 0.4, delay: 0.3 }}
+      >
+        <motion.div
+          className="h-full bg-white origin-left"
+          animate={{ scaleX: progress / 100 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+        />
+      </motion.div>
 
-            {/* Percentage Text */}
-            <motion.div
-              className="text-center text-neutral-400 text-sm font-medium"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-            >
-              {progress}% LOADED
-            </motion.div>
-          </div>
+      {/* Percentage Text */}
+      <motion.div
+        className="text-center text-neutral-400 text-sm font-medium"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+      >
+        {progress}% LOADED
+      </motion.div>
+    </div>
 
           {/* Powered By Text */}
           <motion.div
@@ -102,5 +100,4 @@ const Loader = ({ logo = "/sandip.jpg" }) => {
     </AnimatePresence>
   );
 };
-
 export default Loader;

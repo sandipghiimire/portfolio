@@ -948,7 +948,7 @@ const SinglePagePortfolio = () => {
                                 <div className="flex gap-4 md:gap-6 justify-center md:justify-start">
                                     <motion.a
                                         whileHover={{ y: -3 }}
-                                        href="https://linkedin.com"
+                                        href="https://www.linkedin.com/in/sandip-ghiimire/"
                                         target="_blank"
                                         className="p-3 md:p-4 bg-gray-900/50 backdrop-blur-sm rounded-lg md:rounded-xl border border-gray-800 hover:border-blue-400 text-gray-300 hover:text-blue-400 transition-colors"
                                     >
@@ -956,7 +956,7 @@ const SinglePagePortfolio = () => {
                                     </motion.a>
                                     <motion.a
                                         whileHover={{ y: -3 }}
-                                        href="https://github.com"
+                                        href="https://github.com/sandipghiimire"
                                         target="_blank"
                                         className="p-3 md:p-4 bg-gray-900/50 backdrop-blur-sm rounded-lg md:rounded-xl border border-gray-800 hover:border-blue-400 text-gray-300 hover:text-blue-400 transition-colors"
                                     >
